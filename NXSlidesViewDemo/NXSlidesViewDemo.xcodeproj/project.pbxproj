@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6F7DFA698C01D0C354ACE6A1 /* libPods-NXSlidesViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CF64A6808311FCBF6DB811 /* libPods-NXSlidesViewDemo.a */; };
-		880EB02B1D06A6A600ABA458 /* NXSlideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EB02A1D06A6A600ABA458 /* NXSlideCell.m */; };
 		88460CC51D0564E000568501 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88460CC41D0564E000568501 /* main.m */; };
 		88460CC81D0564E000568501 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88460CC71D0564E000568501 /* AppDelegate.m */; };
 		88460CCB1D0564E000568501 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88460CCA1D0564E000568501 /* ViewController.m */; };
@@ -17,7 +16,8 @@
 		88460CD31D0564E000568501 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88460CD11D0564E000568501 /* LaunchScreen.storyboard */; };
 		88460CDE1D0564E000568501 /* NXSlidesViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88460CDD1D0564E000568501 /* NXSlidesViewDemoTests.m */; };
 		88460CE91D0564E000568501 /* NXSlidesViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88460CE81D0564E000568501 /* NXSlidesViewDemoUITests.m */; };
-		88460CF91D05652100568501 /* NXSlidesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88460CF81D05652100568501 /* NXSlidesView.m */; };
+		88F1B5BD1D104BD900F3AF66 /* NXSlideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F1B5BA1D104BD900F3AF66 /* NXSlideCell.m */; };
+		88F1B5BE1D104BD900F3AF66 /* NXSlidesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F1B5BC1D104BD900F3AF66 /* NXSlidesView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,6 @@
 
 /* Begin PBXFileReference section */
 		65675858EDB35A791F609EF4 /* Pods-NXSlidesViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NXSlidesViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NXSlidesViewDemo/Pods-NXSlidesViewDemo.release.xcconfig"; sourceTree = "<group>"; };
-		880EB0291D06A6A600ABA458 /* NXSlideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSlideCell.h; sourceTree = "<group>"; };
-		880EB02A1D06A6A600ABA458 /* NXSlideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXSlideCell.m; sourceTree = "<group>"; };
 		88460CC01D0564E000568501 /* NXSlidesViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NXSlidesViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88460CC41D0564E000568501 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		88460CC61D0564E000568501 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,8 +55,10 @@
 		88460CE41D0564E000568501 /* NXSlidesViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NXSlidesViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88460CE81D0564E000568501 /* NXSlidesViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXSlidesViewDemoUITests.m; sourceTree = "<group>"; };
 		88460CEA1D0564E000568501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88460CF71D05652100568501 /* NXSlidesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSlidesView.h; sourceTree = "<group>"; };
-		88460CF81D05652100568501 /* NXSlidesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXSlidesView.m; sourceTree = "<group>"; };
+		88F1B5B91D104BD900F3AF66 /* NXSlideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSlideCell.h; sourceTree = "<group>"; };
+		88F1B5BA1D104BD900F3AF66 /* NXSlideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXSlideCell.m; sourceTree = "<group>"; };
+		88F1B5BB1D104BD900F3AF66 /* NXSlidesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSlidesView.h; sourceTree = "<group>"; };
+		88F1B5BC1D104BD900F3AF66 /* NXSlidesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXSlidesView.m; sourceTree = "<group>"; };
 		F15272A90B02AEC5D230D0FD /* Pods-NXSlidesViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NXSlidesViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NXSlidesViewDemo/Pods-NXSlidesViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F6CF64A6808311FCBF6DB811 /* libPods-NXSlidesViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NXSlidesViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,7 +92,7 @@
 		88460CB71D0564E000568501 = {
 			isa = PBXGroup;
 			children = (
-				88460CF61D05650900568501 /* NXSlidesView */,
+				88F1B5B81D104BD900F3AF66 /* NXSlidesView */,
 				88460CC21D0564E000568501 /* NXSlidesViewDemo */,
 				88460CDC1D0564E000568501 /* NXSlidesViewDemoTests */,
 				88460CE71D0564E000568501 /* NXSlidesViewDemoUITests */,
@@ -154,15 +154,16 @@
 			path = NXSlidesViewDemoUITests;
 			sourceTree = "<group>";
 		};
-		88460CF61D05650900568501 /* NXSlidesView */ = {
+		88F1B5B81D104BD900F3AF66 /* NXSlidesView */ = {
 			isa = PBXGroup;
 			children = (
-				88460CF71D05652100568501 /* NXSlidesView.h */,
-				88460CF81D05652100568501 /* NXSlidesView.m */,
-				880EB0291D06A6A600ABA458 /* NXSlideCell.h */,
-				880EB02A1D06A6A600ABA458 /* NXSlideCell.m */,
+				88F1B5B91D104BD900F3AF66 /* NXSlideCell.h */,
+				88F1B5BA1D104BD900F3AF66 /* NXSlideCell.m */,
+				88F1B5BB1D104BD900F3AF66 /* NXSlidesView.h */,
+				88F1B5BC1D104BD900F3AF66 /* NXSlidesView.m */,
 			);
-			path = NXSlidesView;
+			name = NXSlidesView;
+			path = ../NXSlidesView;
 			sourceTree = "<group>";
 		};
 		976A16A2A6A1C042FAD26B28 /* Pods */ = {
@@ -364,10 +365,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88460CCB1D0564E000568501 /* ViewController.m in Sources */,
+				88F1B5BE1D104BD900F3AF66 /* NXSlidesView.m in Sources */,
 				88460CC81D0564E000568501 /* AppDelegate.m in Sources */,
-				88460CF91D05652100568501 /* NXSlidesView.m in Sources */,
 				88460CC51D0564E000568501 /* main.m in Sources */,
-				880EB02B1D06A6A600ABA458 /* NXSlideCell.m in Sources */,
+				88F1B5BD1D104BD900F3AF66 /* NXSlideCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

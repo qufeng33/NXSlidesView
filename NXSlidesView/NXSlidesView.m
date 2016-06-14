@@ -193,6 +193,9 @@
     if (!self.loaded && self.imageURLs.count > 1) {
         [self.mainView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
         self.loaded = YES;
+    }else{
+        NSIndexPath *indexPath = [self.mainView indexPathsForVisibleItems].lastObject;
+        [self.mainView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     }
 }
 
