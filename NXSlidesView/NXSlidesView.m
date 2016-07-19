@@ -222,7 +222,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     NXSlideCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[NXSlideCell cellIdentifier] forIndexPath:indexPath];
-    [cell configCellWithImageURL:[self.items objectAtIndex:indexPath.row] placeholderImage:self.placeholderImage contentMode:self.contentMode];
+    [cell configCellWithImageURL:[self.items objectAtIndex:indexPath.row] placeholderImage:self.placeholderImage contentMode:self.contentMode title:@"标题标题标题标题标题标题标题标题标题标题标题"];
     return cell;
 }
 

@@ -1,10 +1,10 @@
 PODS:
   - Masonry (1.0.1)
   - YYCache (1.0.3)
-  - YYImage (1.0.2):
-    - YYImage/Core (= 1.0.2)
-  - YYImage/Core (1.0.2)
-  - YYWebImage (1.0.3):
+  - YYImage (1.0.3):
+    - YYImage/Core (= 1.0.3)
+  - YYImage/Core (1.0.3)
+  - YYWebImage (1.0.4):
     - YYCache
     - YYImage
 
@@ -15,9 +15,9 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   YYCache: 282f35b5b0990833d0b7a06d864a87141a021da2
-  YYImage: 2cc79ed49b9549b71c6715cefe7b0f5ab3d33abf
-  YYWebImage: 8da75a611fd0d2e0f58a273f9ca0bc731614cb0d
+  YYImage: 362f44ffba1fc498f2152060f3bb54ed84600981
+  YYWebImage: 0431ed108e104527669b86f75efd58958425cca2
 
 PODFILE CHECKSUM: fff878861ba26cd5b2ca14e29f47afa9e0e95a3f
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.beta.1

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'NXSlidesView'
-  s.version      = '0.1.1'
+  s.version      = '0.1.2'
   s.summary      = '无限轮播图'
   s.homepage     = 'https://github.com/qufeng33/NXSlidesView.git'
   s.license      = 'MIT'

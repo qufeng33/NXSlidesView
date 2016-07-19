@@ -12,7 +12,8 @@
 
 - (void)configCellWithImageURL:(NSURL *)imageURL
               placeholderImage:(UIImage *)placeholderImage
-                   contentMode:(UIViewContentMode)mode;
+                   contentMode:(UIViewContentMode)mode
+                         title:(NSString *)title;
 
 + (NSString *)cellIdentifier;
 

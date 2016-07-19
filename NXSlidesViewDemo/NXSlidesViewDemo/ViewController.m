@@ -26,7 +26,7 @@
                                   [NSURL URLWithString:@"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"]
                                   ];
     
-    NXSlidesView *slidesView = [[NXSlidesView alloc] initWithFrame:CGRectMake(0, 0, 100, 100) ImageURLs:self.imagesURLStrings placeholderImage:nil autoScroll:YES infiniteLoop:YES didSelectItemBlock:^(NXSlidesView *slidesView, NSArray *imageURLs, NSInteger index) {
+    NXSlidesView *slidesView = [[NXSlidesView alloc] initWithFrame:CGRectMake(0, 0, 100, 120) ImageURLs:self.imagesURLStrings placeholderImage:nil autoScroll:YES infiniteLoop:YES didSelectItemBlock:^(NXSlidesView *slidesView, NSArray *imageURLs, NSInteger index) {
         NSLog(@"点击了第%@张图片",[NSNumber numberWithInteger:index]);
         [slidesView updateImageURLs:imageURLs placeholderImage:nil];
     }];
