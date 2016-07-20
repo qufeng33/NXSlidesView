@@ -7,21 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NXSlide.h"
 
 @class NXSlidesView;
 
-typedef void(^DidSelectItemBlock)(NXSlidesView *slidesView, NSArray *imageURLs, NSInteger index);
+typedef void(^DidSelectItemBlock)(NXSlidesView *slidesView, NSInteger index);
 
 @interface NXSlidesView : UIView
 
-/** 需要展示的图片列表 */
-@property (copy  , nonatomic, readonly) NSArray            *imageURLs;
+/** 需要展示的幻灯片列表 */
+@property (copy  , nonatomic, readonly) NSArray            *slides;
 
 /** 弹性动画 */
 @property (assign, nonatomic          ) BOOL               bounces;
 
 /** 占位图 */
-@property (strong, nonatomic, readonly) UIImage            *placeholderImage;
+@property (strong, nonatomic          ) UIImage            *placeholderImage;
 
 /** 自动滚动间隔时间,默认3s */
 @property (assign, nonatomic          ) CGFloat            autoScrollTimeInterval;
@@ -35,9 +36,6 @@ typedef void(^DidSelectItemBlock)(NXSlidesView *slidesView, NSArray *imageURLs, 
 /** 是否自动滚动,默认Yes */
 @property (assign, nonatomic          ) BOOL               autoScroll;
 
-/** 轮播图片的ContentMode，默认为 UIViewContentModeScaleToFill */
-@property (assign, nonatomic          ) UIViewContentMode  bannerImageViewContentMode;
-
 /** 轮播图点击后的回调 */
 @property (copy, nonatomic            ) DidSelectItemBlock didSelectItemBlock;
 
@@ -45,7 +43,7 @@ typedef void(^DidSelectItemBlock)(NXSlidesView *slidesView, NSArray *imageURLs, 
 /**
  *  初始化方法
  *
- *  @param imageURLs        图片的URL地址
+ *  @param slides           需要展示的幻灯片
  *  @param placeholderImage 占位图
  *  @param autoScroll       是否自动滚动
  *  @param infiniteLoop     是否无限循环
@@ -54,21 +52,18 @@ typedef void(^DidSelectItemBlock)(NXSlidesView *slidesView, NSArray *imageURLs, 
  *  @return 实例
  */
 - (instancetype)initWithFrame:(CGRect)frame
-                    ImageURLs:(NSArray <NSURL *>*)imageURLs
+                    slides:(NSArray <NXSlide *>*)slides
              placeholderImage:(UIImage *)placeholderImage
                    autoScroll:(BOOL)autoScroll
                  infiniteLoop:(BOOL)infiniteLoop
            didSelectItemBlock:(DidSelectItemBlock)block;
 
 /**
- *  更新图片信息
+ *  更新幻灯片
  *
  *  @param imageURLs        图片的URL地址
- *  @param placeholderImage 占位图
  */
-- (void)updateImageURLs:(NSArray <NSURL *>*)imageURLs
-       placeholderImage:(UIImage *)placeholderImage;
-
+- (void)updateSlides:(NSArray <NXSlide *>*)slides;
 
 /**
  *  重载

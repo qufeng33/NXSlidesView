@@ -10,10 +10,9 @@
 
 @interface NXSlideCell : UICollectionViewCell
 
-- (void)configCellWithImageURL:(NSURL *)imageURL
-              placeholderImage:(UIImage *)placeholderImage
-                   contentMode:(UIViewContentMode)mode
-                         title:(NSString *)title;
+@property (weak, nonatomic) UIImageView *imageView;
+@property (weak, nonatomic) UILabel     *titleLabel;
+@property (weak, nonatomic) UIView      *titlebackgroundView;
 
 + (NSString *)cellIdentifier;
 

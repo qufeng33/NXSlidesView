@@ -8,6 +8,7 @@
 
 #import "NXSlidesView.h"
 #import <Masonry/Masonry.h>
+#import <YYWebImage/YYWebImage.h>
 #import "NXSlideCell.h"
 
 @interface NXSlidesView ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -23,17 +24,17 @@
 @implementation NXSlidesView
 
 - (instancetype)initWithFrame:(CGRect)frame
-                    ImageURLs:(NSArray<NSURL *> *)imageURLs
+                       slides:(NSArray<NXSlide *> *)slides
              placeholderImage:(UIImage *)placeholderImage
                    autoScroll:(BOOL)autoScroll
                  infiniteLoop:(BOOL)infiniteLoop
-                didSelectItemBlock:(DidSelectItemBlock)block{
+           didSelectItemBlock:(DidSelectItemBlock)block{
     self = [self initWithFrame:frame];
     if (self) {
         self.autoScroll         = autoScroll;
         self.infiniteLoop       = infiniteLoop;
         self.didSelectItemBlock = block;
-        _imageURLs              = imageURLs;
+        _slides                 = slides;
         _placeholderImage       = placeholderImage;
         [self reload];
     }
@@ -82,7 +83,7 @@
     UICollectionView *collectionView              = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
     collectionView.backgroundColor                = [UIColor clearColor];
     collectionView.pagingEnabled                  = YES;
-    collectionView.scrollEnabled                  = self.imageURLs.count > 1;
+    collectionView.scrollEnabled                  = self.slides.count > 1;
     collectionView.showsHorizontalScrollIndicator = NO;
     collectionView.showsVerticalScrollIndicator   = NO;
     [collectionView registerClass:[NXSlideCell class] forCellWithReuseIdentifier:[NXSlideCell cellIdentifier]];
@@ -100,7 +101,7 @@
     }
     
     UIPageControl *pageControl         = [[UIPageControl alloc] init];
-    pageControl.numberOfPages          = self.imageURLs.count;
+    pageControl.numberOfPages          = self.slides.count;
     pageControl.currentPage            = 0;
     pageControl.hidesForSinglePage     = YES;
     pageControl.userInteractionEnabled = NO;
@@ -128,7 +129,7 @@
 
 #pragma mark - IBAction
 - (void)showNextSlides{
-    if (self.imageURLs.count < 2) {
+    if (self.slides.count < 2) {
         return;
     }
     
@@ -147,20 +148,19 @@
     self.pageControl.currentPage = toIndex - 1;
 }
 
-- (void)updateImageURLs:(NSArray<NSURL *> *)imageURLs placeholderImage:(UIImage *)placeholderImage{
-    _imageURLs = imageURLs;
-    _placeholderImage = placeholderImage;
+- (void)updateSlides:(NSArray<NXSlide *> *)slides{
+    _slides = slides;
     [self reload];
 }
 
 - (void)reload{
-    self.items = [self resetDatasouce:self.imageURLs];
+    self.items = [self resetDatasouce:self.slides];
     
     [self setupMainView];
     [self setupPageControl];
     [self setupTimer];
 
-    if (self.imageURLs.count > 1) {
+    if (self.slides.count > 1) {
         [self.mainView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     }
 }
@@ -189,8 +189,8 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     [(UICollectionViewFlowLayout *)self.mainView.collectionViewLayout setItemSize:self.bounds.size];
-    self.pageControl.hidden = !(self.showPageControl && self.imageURLs.count > 1);
-    if (!self.loaded && self.imageURLs.count > 1) {
+    self.pageControl.hidden = !(self.showPageControl && self.slides.count > 1);
+    if (!self.loaded && self.slides.count > 1) {
         [self.mainView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
         self.loaded = YES;
     }else{
@@ -222,14 +222,24 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     NXSlideCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[NXSlideCell cellIdentifier] forIndexPath:indexPath];
-    [cell configCellWithImageURL:[self.items objectAtIndex:indexPath.row] placeholderImage:self.placeholderImage contentMode:self.contentMode title:@"标题标题标题标题标题标题标题标题标题标题标题"];
+    NXSlide *slide = [self.items objectAtIndex:indexPath.row];
+    cell.imageView.contentMode = slide.imageViewContentMode;
+    cell.titlebackgroundView.hidden = slide.title?NO:YES;
+    cell.titleLabel.hidden = slide.title?NO:YES;
+    cell.titleLabel.attributedText = slide.title;
+    if (slide.image) {
+        [cell.imageView setImage:slide.image];
+    }else{
+        [cell.imageView yy_setImageWithURL:slide.imageURL placeholder:self.placeholderImage options:YYWebImageOptionShowNetworkActivity|YYWebImageOptionAllowBackgroundTask|YYWebImageOptionSetImageWithFadeAnimation completion:nil];
+    }
+
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (self.didSelectItemBlock) {
-        self.didSelectItemBlock(self, self.imageURLs, indexPath.row);
+        self.didSelectItemBlock(self, self.pageControl.currentPage);
     }
 }
 

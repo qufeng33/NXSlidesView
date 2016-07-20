@@ -16,6 +16,7 @@
 		88460CD31D0564E000568501 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88460CD11D0564E000568501 /* LaunchScreen.storyboard */; };
 		88460CDE1D0564E000568501 /* NXSlidesViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88460CDD1D0564E000568501 /* NXSlidesViewDemoTests.m */; };
 		88460CE91D0564E000568501 /* NXSlidesViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88460CE81D0564E000568501 /* NXSlidesViewDemoUITests.m */; };
+		88AC78471D3F16B800BA59E3 /* NXSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AC78461D3F16B800BA59E3 /* NXSlide.m */; };
 		88F1B5BD1D104BD900F3AF66 /* NXSlideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F1B5BA1D104BD900F3AF66 /* NXSlideCell.m */; };
 		88F1B5BE1D104BD900F3AF66 /* NXSlidesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F1B5BC1D104BD900F3AF66 /* NXSlidesView.m */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,8 @@
 		88460CE41D0564E000568501 /* NXSlidesViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NXSlidesViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88460CE81D0564E000568501 /* NXSlidesViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXSlidesViewDemoUITests.m; sourceTree = "<group>"; };
 		88460CEA1D0564E000568501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88AC78451D3F16B800BA59E3 /* NXSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSlide.h; sourceTree = "<group>"; };
+		88AC78461D3F16B800BA59E3 /* NXSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXSlide.m; sourceTree = "<group>"; };
 		88F1B5B91D104BD900F3AF66 /* NXSlideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSlideCell.h; sourceTree = "<group>"; };
 		88F1B5BA1D104BD900F3AF66 /* NXSlideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXSlideCell.m; sourceTree = "<group>"; };
 		88F1B5BB1D104BD900F3AF66 /* NXSlidesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSlidesView.h; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 			children = (
 				88F1B5B91D104BD900F3AF66 /* NXSlideCell.h */,
 				88F1B5BA1D104BD900F3AF66 /* NXSlideCell.m */,
+				88AC78451D3F16B800BA59E3 /* NXSlide.h */,
+				88AC78461D3F16B800BA59E3 /* NXSlide.m */,
 				88F1B5BB1D104BD900F3AF66 /* NXSlidesView.h */,
 				88F1B5BC1D104BD900F3AF66 /* NXSlidesView.m */,
 			);
@@ -369,6 +374,7 @@
 				88460CC81D0564E000568501 /* AppDelegate.m in Sources */,
 				88460CC51D0564E000568501 /* main.m in Sources */,
 				88F1B5BD1D104BD900F3AF66 /* NXSlideCell.m in Sources */,
+				88AC78471D3F16B800BA59E3 /* NXSlide.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
